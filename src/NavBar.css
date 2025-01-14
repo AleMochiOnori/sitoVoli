@@ -1,0 +1,39 @@
+/* NavBar.css */
+.Main {
+    position: fixed; /* Fissa la navbar in cima alla pagina */
+    top: 0; /* Posiziona la navbar in alto */
+    left: 0; /* Allinea a sinistra */
+    width: 100%; /* Larghezza al 100% */
+    background-color: #3b70a8; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    padding: 10px 20px; /* Spazi interni */
+    display: flex; /* Usa Flexbox per gestire gli elementi interni */
+    justify-content: space-between; /* Spaziatura tra elementi */
+    align-items: center; /* Allineamento verticale */
+    z-index: 1000; /* Assicurati che la navbar sia sopra gli altri elementi */
+
+  }
+  
+  .Left ul {
+    list-style: none; /* Rimuovi i puntini */
+    margin: 0; /* Rimuovi margini */
+    padding: 0; /* Rimuovi padding */
+    display: flex; /* Allinea gli elementi in orizzontale */
+    gap: 15px; /* Spaziatura tra gli elementi */
+    font-size: 20px;
+  }
+  
+  .Left li :hover {
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+  }
+
+  :Left li :hover{
+    color: black;
+  }
+  
+  .Right .text {
+    font-size: 40px; /* Dimensione del testo */
+    font-weight: bold; /* Testo in grassetto */
+    margin-right: 60px;
+  }
+  
