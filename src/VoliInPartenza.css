@@ -1,0 +1,79 @@
+
+.volo-container {
+    width: 800px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto; /* Centra il contenitore e aggiunge margine dall'alto */
+    margin-top: 107px;
+  }
+
+
+/* Titolo */
+.title {
+    font-size: 50px; /* Titolo più grande */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Tabella */
+.volo-table {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 18px; /* Testo più grande per migliorare la leggibilità */
+}
+
+.volo-table th, .volo-table td {
+    padding: 15px; /* Spaziatura maggiore per rendere il design più arioso */
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.volo-table th {
+    background-color: #046ad6;
+    text-transform: uppercase;
+    font-size: 30px; /* Dimensione del testo aumentata */
+}
+
+.volo-table th:nth-child(2) {
+    background-color: #28a745; /* Verde */
+    color: white; /* Testo bianco */
+    
+}
+
+
+
+.volo-table th:nth-child(1) {
+    background-color: #2348f0; /* Verde */
+    color: white; /* Testo bianco */
+    
+}
+
+
+
+
+
+
+.volo-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.volo-table tr:hover {
+    background-color: #f1f9ff;
+}
+
+.volo-table td {
+    color: #555;
+}
+
+/* Responsività */
+@media (max-width: 600px) {
+    .volo-table th, .volo-table td {
+        font-size: 16px; /* Testo più piccolo per dispositivi mobili */
+        padding: 10px;
+    }
+}

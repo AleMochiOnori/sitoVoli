@@ -1,0 +1,100 @@
+body{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.air-station-main{
+    width: 100%;
+    
+  
+}
+
+html{
+  width: 100%;
+}
+
+
+.card{
+  height: 300px;
+  width: 800px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 10em; /* Sposta la card in basso */
+} 
+
+
+.immagineStile{
+  height: 450px;
+  width: 650px;
+  position: relative;
+  left: 25em; /* Sposta la card in basso */
+  bottom:10em;
+  border-radius: 10px;
+
+}
+
+.midSection{
+  background-color:#86baf1;
+  height: 70vh;
+}
+
+.coloreStoria{
+  color:#6fa5df;
+  font-size: 60px;
+  margin-bottom: 40px;
+ 
+}
+
+
+
+.middle-content-text{
+  font-size: 30px;
+  font-weight: 700;
+  color:#ffffff;
+  padding:60px;
+  text-shadow: 0px 0px 8px #000000;
+}
+
+
+
+.background {
+  display: flex; /* Attiva Flexbox */
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-image: url('./assets/asd.jpg'); /* Percorso all'immagine */
+  background-size: cover; /* L'immagine copre tutto il contenitore */
+  background-position: center; /* Centra l'immagine */
+  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+  height: 63vh; /* Imposta l'altezza del contenitore a tutta la finestra */
+  width: 100%;
+  text-align: center;
+
+}
+
+
+
+#main-text{
+    text-shadow: 3px 3px 6px #000000;
+    text-align: center;
+    font-size: 90px;
+}
+
+.text-change{
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 6px #000000;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assicura che padding e bordi siano inclusi nelle dimensioni totali */
+  }
+  
+  html, body {
+    height: 100%; /* Estende il contenitore principale */
+  }
+

@@ -1,0 +1,56 @@
+.Main-footer{
+    height:25vh;
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 70px;
+    flex:1
+}
+
+#yee{
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+.social-links a{
+    font-size: 25px ; 
+}
+
+.social-links a:hover{
+    font-size: 25px ; 
+    color: red;
+}
+
+
+.link-contatti li {
+    font-size: 20px;
+}
+
+
+
+
+.ciao{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.contatti{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+#margin {
+    margin-bottom: 15px;
+}
+  
+
+li{
+    font-weight: bold;
+}

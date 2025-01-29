@@ -1,10 +1,12 @@
 /* App.css */
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  width: 100%;
+  box-sizing: border-box; /* Assicura che padding e bordi siano inclusi nelle dimensioni totali */
+}
+
+ body {
+  height: 100%; /* Estende il contenitore principale */
 }
 .container {
   padding-top: 70px; /* Aggiungi spazio sopra per la navbar */
@@ -16,47 +18,27 @@ body {
 p {
   font-size: 18px;
   color: blue;
-}
+} 
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Altezza minima uguale alla finestra */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+  flex: 1; /* Occupa tutto lo spazio disponibile */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
