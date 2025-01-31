@@ -24,6 +24,7 @@ html{
 } 
 
 
+
 .immagineStile{
   height: 450px;
   width: 650px;
@@ -34,10 +35,20 @@ html{
 
 }
 
+.immagineStile2 {
+  height: 450px;
+  width: 650px;
+  position: relative;
+  border-radius: 10px;
+  margin-right: 20px; /* Spazio tra immagine e testo */
+}
+
+
 .midSection{
   background-color:#86baf1;
   height: 70vh;
 }
+
 
 .coloreStoria{
   color:#6fa5df;
@@ -55,6 +66,8 @@ html{
   padding:60px;
   text-shadow: 0px 0px 8px #000000;
 }
+
+
 
 
 
@@ -97,4 +110,37 @@ html{
   html, body {
     height: 100%; /* Estende il contenitore principale */
   }
+
+.section2 {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 150px;
+
+}
+
+
+
+
+
+.immagineStile2{
+  height: 450px;
+  width: 650px;
+  position: relative;
+
+  border-radius: 10px;
+
+}
+
+
+.middle-content-text2{
+  font-size: 30px;
+  font-weight:bolder;
+  line-height: 1.4;
+  color:#000000;
+  padding:60px;
+
+}
+
 

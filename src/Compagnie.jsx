@@ -17,8 +17,10 @@ function App() {
   }, []);
 
   return (
+    <>
     <div className='Wrapper'>
       <div className='CardContainer'>
+        <h1 className='text-compagnia'>LE NOSTRE COMPAGNIE</h1>
         {compagnie.map((compagnia, index) => (
           <div className='Card' key={index}>
             <div className='CardHeader'>
@@ -31,6 +33,7 @@ function App() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
