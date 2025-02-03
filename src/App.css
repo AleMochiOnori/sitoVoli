@@ -7,7 +7,10 @@
 
  body {
   height: 100%; /* Estende il contenitore principale */
+  font-family: 'Montserrat', sans-serif;
 }
+
+
 .container {
   padding-top: 70px; /* Aggiungi spazio sopra per la navbar */
 }

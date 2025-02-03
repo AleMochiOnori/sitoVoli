@@ -7,7 +7,13 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 50px auto; /* Centra il contenitore e aggiunge margine dall'alto */
+   
+  }
+
+  .wrapper{
     margin-top: 107px;
+    padding: 20px;
+    margin-bottom: 20px;
   }
 
 
@@ -17,6 +23,9 @@
     margin-bottom: 20px;
     color: #333;
 }
+
+
+
 
 /* Tabella */
 .volo-table {
