@@ -14,23 +14,21 @@ user = 'postgres'
 password = "postgres"
 
 
-#Connessione al database 
-
-
+# Connessione al database 
 
 try:
     connection = psycopg2.connect(
-        host = host,
-        port = port,
-        dbname = db_name,
-        user = user,
-        password = password
+        host=host,
+        port=port,
+        dbname=db_name,
+        user=user,
+        password=password
     )
 
     print("Connessione al database avvenuta con successo")
 
-except Exception as e :
-    print(f"Errore di connessione al database : {e}")
+except Exception as e:
+    print(f"Errore di connessione al database: {e}")
 
 
 def get_db_connection():
@@ -47,24 +45,21 @@ def get_db_connection():
         return None
 
 
-
-
 def loadJson(path):
     try:
-        with open(path , 'r' , encoding='utf-8') as file :
+        with open(path, 'r', encoding='utf-8') as file:
             return json.load(file)
-    except FileNotFoundError :
+    except FileNotFoundError:
         return {"error": f"File not found: {path}"}
-    except json.JSONDecodeError : 
-        return {"error:" f"Errore nella codifica del file JSON : {path}"}
-    except PermissionError :
-        return {"error : " f"Permesso negato nel file :{path}"} 
+    except json.JSONDecodeError:
+        return {"error": f"Errore nella codifica del file JSON: {path}"}
+    except PermissionError:
+        return {"error": f"Permesso negato nel file: {path}"}
     except Exception as e:
-        return {"error : " f"errore generico {e}"}
+        return {"error": f"Errore generico: {e}"}
 
 
-
-@app.route('/compagnia' , methods=["GET"])
+@app.route('/compagnia', methods=["GET"])
 def getCompagnia():
     try:
         cursor = connection.cursor()
@@ -84,9 +79,7 @@ def getCompagnia():
             return jsonify({"error": "Unable to fetch data"}), 500
 
 
-
-
-@app.route('/voliInPartenza' , methods = ["GET"])
+@app.route('/voliInPartenza', methods=["GET"])
 def getVoliInPartenza():
     try:
         cursor = connection.cursor()
@@ -94,8 +87,9 @@ def getVoliInPartenza():
         voliInPartenza = cursor.fetchall()
         cursor.close()
         voli_list = [{"id": row[0], "compagnia": row[1]} for row in voliInPartenza]
+
         return jsonify(voli_list)
-    except Exception as e:  
+    except Exception as e:
         app.logger.error(f"Errore durante l'esecuzione della query: {e}")
         json_data = loadJson("./json/voliInPartenza.json")
         if "error" in json_data:
@@ -103,17 +97,8 @@ def getVoliInPartenza():
         return jsonify(json_data)
 
 
-
-
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
-
-
-
-
-
-
-
 
 
 
