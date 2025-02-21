@@ -1,7 +1,3 @@
-
-
-
-/* Wrapper principale */
 .Wrapper {
   display: flex;
   justify-content: center;
@@ -10,18 +6,16 @@
   margin-top: 50px;
   background-color: #f4f4f4;
   min-height: 100vh;
+  margin-top: -20px;
 }
 
-/* Contenitore delle card */
 .CardContainer {
   display: grid;
   gap: 20px;
   max-width: 1200px;
   width: 100%;
-  
 }
 
-/* Stile per ogni card */
 .Card {
   background-color: #ffffff;
   border-radius: 10px;
@@ -31,24 +25,23 @@
 }
 
 .Card:hover {
-  transform: translateY(-5px); /* Sollevamento card al passaggio del mouse */
+  transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-.text-compagnia{
-  color:rgb(124, 176, 255);
+.text-compagnia {
+  color: rgb(124, 176, 255);
   margin-bottom: 50px;
+  font-size: 30px;
+  text-align: center;
 }
 
-/* Header della card */
 .CardHeader h3 {
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 10px;
 }
 
-/* Corpo della card */
 .CardBody p {
   font-size: 1rem;
   color: #555;
@@ -56,15 +49,14 @@
   line-height: 1.5;
 }
 
-/* Responsività */
 @media (max-width: 768px) {
   .CardContainer {
-    grid-template-columns: 1fr 1fr; /* 2 card per riga */
+    grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 480px) {
-  .CardContainer {
-    grid-template-columns: 1fr; /* 1 card per riga */
+  .text-compagnia {
+    font-size: 24px;
   }
+
+  
 }

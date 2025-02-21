@@ -1,27 +1,18 @@
-/* App.css */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Assicura che padding e bordi siano inclusi nelle dimensioni totali */
+  box-sizing: border-box;
 }
 
- body {
-  height: 100%; /* Estende il contenitore principale */
+body {
   font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  padding-top: 70px; /* Spazio per la navbar fissa */
 }
-
 
 .container {
   padding-top: 70px; /* Aggiungi spazio sopra per la navbar */
 }
-.Main {
-  border: 1px solid black;
-}
-
-p {
-  font-size: 18px;
-  color: blue;
-} 
 
 #root {
   max-width: 100%;
@@ -31,11 +22,11 @@ p {
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Altezza minima uguale alla finestra */
+  min-height: 100vh;
 }
 
 .content {
-  flex: 1; /* Occupa tutto lo spazio disponibile */
+  flex: 1;
 }
 
 footer {
@@ -44,4 +35,3 @@ footer {
   padding: 10px;
   border-top: 1px solid #ddd;
 }
-

@@ -1,117 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-body{
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-}
-.air-station-main{
-    width: 100%;
-    
-  
-}
-
-html{
+.air-station-main {
   width: 100%;
 }
 
-
-.card{
-  height: 300px;
-  width: 800px;
-  margin-left: 100px;
+.background {
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  top: 10em; /* Sposta la card in basso */
-} 
+  background-image: url('./assets/asd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 63vh;
+  width: 100%;
+  text-align: center;
+}
 
+#main-text {
+  text-shadow: 3px 3px 6px #000000;
+  font-size: 90px;
+  color: white;
+}
 
+/* Stile per la PRIMA sezione (testo e immagine affiancati) */
+.midSection {
+  background-color: #86baf1;
+  height: auto;
+  padding: 100px ; /* Aumenta il padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* Aumenta il gap tra testo e immagine */
+}
 
-.immagineStile{
-  height: 450px;
-  width: 650px;
-  position: relative;
-  left: 25em; /* Sposta la card in basso */
-  bottom:10em;
+.card {
+  width: 40%; /* Larghezza del testo */
+  max-width: 600px;
+
   border-radius: 10px;
+  padding: 20px;
 
 }
 
-.immagineStile2 {
-  height: 450px;
-  width: 650px;
-  position: relative;
-  border-radius: 10px;
-  margin-right: 20px; /* Spazio tra immagine e testo */
-}
-
-
-.midSection{
-  background-color:#86baf1;
-  height: 70vh;
-}
-
-
-.coloreStoria{
-  color:#6fa5df;
-  font-size: 60px;
-  margin-bottom: 40px;
- 
-}
-
-
-
-.middle-content-text{
-  font-size: 30px;
+.middle-content-text {
+  font-size: 29px;
   font-weight: 700;
-  color:#ffffff;
-  padding:60px;
+  color: #ffffff;
   text-shadow: 0px 0px 8px #000000;
 }
 
-
-
-
-
-.background {
-  display: flex; /* Attiva Flexbox */
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: center; /* Centra verticalmente */
-  background-image: url('./assets/asd.jpg'); /* Percorso all'immagine */
-  background-size: cover; /* L'immagine copre tutto il contenitore */
-  background-position: center; /* Centra l'immagine */
-  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
-  height: 63vh; /* Imposta l'altezza del contenitore a tutta la finestra */
-  width: 100%;
-  text-align: center;
-
+.immagineStile {
+  width: 40%; /* Larghezza dell'immagine */
+  max-width: 650px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
-#main-text{
-    text-shadow: 3px 3px 6px #000000;
-    text-align: center;
-    font-size: 90px;
-}
-
-.text-change{
-    color:white;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 1px 1px 6px #000000;
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Assicura che padding e bordi siano inclusi nelle dimensioni totali */
-  }
-  
-  html, body {
-    height: 100%; /* Estende il contenitore principale */
-  }
-
+/* Stile per la SECONDA sezione (immagine sopra e testo sotto) */
 .section2 {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -144,4 +88,101 @@ html{
   
 }
 
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  #main-text {
+    font-size: 50px;
+  }
 
+  .midSection {
+    flex-direction: column; /* Disposizione verticale */
+    gap: 40px; /* Mantieni il gap */
+  }
+
+  .card {
+    width: 90%; /* Larghezza del testo su mobile */
+    max-width: 100%;
+  }
+
+  .air-station-main {
+    width: 100%;
+    margin-top: -20px;
+  }
+  
+  
+
+  
+.immagineStile2{
+  height: 250px;
+  width: 350px;
+  position: relative;
+
+  border-radius: 10px;
+
+}
+
+  .immagineStile {
+    width: 200px; /* Larghezza dell'immagine su mobile */
+    max-width: 100%;
+  }
+
+  .middle-content-text, .middle-content-text2 {
+    font-size: 18px;
+  }
+
+  .section2 {
+    gap: 20px; /* Riduci il gap su mobile */
+  }
+  
+  .middle-content-text {
+    font-size: 20px !important;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0px 0px 8px #000000;
+  
+    padding: 40px;
+  }
+
+
+}
+
+
+@media (max-width: 1360px) {
+
+  .midSection {
+    background-color: #86baf1;
+    height: auto;
+    padding: 100px ; /* Aumenta il padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Aumenta il gap tra testo e immagine */
+  }
+
+  .section2 {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 150px;
+  
+  }
+
+  .immagineStile {
+    width: 90%; /* Larghezza dell'immagine su mobile */
+    max-width: 100%;
+    width: 400px;
+  }
+
+  .middle-content-text {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0px 0px 8px #000000;
+  
+    padding: 40px;
+  }
+
+}

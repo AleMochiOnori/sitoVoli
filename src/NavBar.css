@@ -1,49 +1,15 @@
-
 .Main {
-  position: fixed; /* Fissa la navbar in cima alla pagina */
-  top: 0; /* Posiziona la navbar in alto */
-  left: 0; /* Allinea a sinistra */
-  width: 100%; /* Larghezza al 100% */
-  background-color: #6fa5df; /* Colore di sfondo */
-  color: white; /* Colore del testo */
-  padding: 10px 20px; /* Spazi interni */
-  display: flex; /* Usa Flexbox per gestire gli elementi interni */
-  justify-content: space-between; /* Spaziatura tra elementi */
-  align-items: center; /* Allineamento verticale */
-  z-index: 1000; /* Assicurati che la navbar sia sopra gli altri elementi */
-}
-
-.LinksSection ul {
-  list-style: none; /* Rimuovi i puntini */
-  margin: 0; /* Rimuovi margini */
-  padding: 0; /* Rimuovi padding */
-  display: flex; /* Allinea gli elementi in orizzontale */
-  gap: 15px; /* Spaziatura tra gli elementi */
-  font-size: 20px;
-}
-
-a {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #6fa5df;
   color: white;
-  text-shadow: 1px 1px 6px #000000;
-}
-
-.LinksSection a:hover {
-  color: white;
-  font-weight: bolder;
-}
-
-.aereo {
-  width: 90px;
-  fill: white;
-}
-
-.LinksSection li:hover {
-  cursor: pointer; /* Cambia il cursore al passaggio del mouse */
-}
-
-.LogoSection .text {
-  font-size: 40px; /* Dimensione del testo */
-  font-weight: bold; /* Testo in grassetto */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
 .LogoSection {
@@ -52,13 +18,106 @@ a {
   gap: 20px;
 }
 
-a{
+.LogoSection .text {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.aereo {
+  width: 90px;
+  fill: white;
+}
+
+.LinksSection ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.LinksSection a {
+  color: white;
+  text-shadow: 1px 1px 6px #000000;
   font-size: 30px;
 }
 
+.LinksSection a:hover {
+  color: white;
+  font-weight: bolder;
+}
 
+.LinksSection li:hover {
+  cursor: pointer;
+}
 
-.LinksSection {
-  margin-right: 100px;
+.HamburgerMenu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1002;
+}
 
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .LogoSection .text {
+    font-size: 30px;
+  }
+
+  .LogoSection .aereo {
+    width: 40px;
+  }
+
+  .LinksSection {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1001;
+  }
+
+  .LinksSection.open {
+    right: 0;
+  }
+
+  .LinksSection ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .HamburgerMenu {
+    display: block;
+  }
+
+  .Overlay {
+    display: block;
+  }
+}
+
+@media (max-width: 360px) {
+  .LogoSection .text {
+    font-size: 22px;
+  }
+
+  .LogoSection .aereo {
+    width: 35px;
+  }
 }
