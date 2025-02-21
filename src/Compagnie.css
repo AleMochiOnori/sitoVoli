@@ -55,7 +55,17 @@
   }
 
   .text-compagnia {
-    font-size: 24px;
+    font-size: 35px;
+  }
+
+  
+}
+
+
+@media (max-width: 250px) {
+
+  .text-compagnia {
+    font-size: 20px;
   }
 
   
