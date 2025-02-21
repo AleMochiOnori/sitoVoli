@@ -24,27 +24,28 @@ const VoliInPartenza = () => {
     }, []);
 
     return (
-    <div className='wrapper'>
+        <div className='wrapper'>
         <div className="volo-container">
             <h1 className="title">Voli in partenza</h1>
-            <table className="volo-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Compagnia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {voliInPartenza.map((volo) => (
-                        <tr key={volo.id}>
-                            <td>{volo.id}</td>
-                            <td>{volo.compagnia}</td>
+            <div className="table-container">
+                <table className="volo-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Compagnia</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {voliInPartenza.map((volo) => (
+                            <tr key={volo.id}>
+                                <td>{volo.id}</td>
+                                <td>{volo.compagnia}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
-     
     </div>
     );
 };

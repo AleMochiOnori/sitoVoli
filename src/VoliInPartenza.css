@@ -1,60 +1,70 @@
 .volo-container {
-    width: 90%;
-    max-width: 800px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 50px auto;
-    padding: 20px;
-  }
-  
-  .title {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .volo-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    font-size: 18px;
-  }
-  
+  width: 90%;
+  max-width: 800px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 20px;
+  overflow-x: auto; /* Aggiunto per gestire lo scorrimento orizzontale */
+}
+
+.wrapper {
+  background-color: white;
+  padding: 100px;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.table-container {
+  overflow-x: auto; /* Aggiunto per gestire lo scorrimento orizzontale */
+}
+
+.volo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.volo-table th, .volo-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.volo-table th {
+  background-color: #046ad6;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+}
+
+.volo-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.volo-table tr:hover {
+  background-color: #f1f9ff;
+}
+
+.volo-table td {
+  color: #000000;
+}
+
+@media (max-width: 600px) {
   .volo-table th, .volo-table td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-  }
-  
-  .volo-table th {
-    background-color: #046ad6;
-    text-transform: uppercase;
-    font-size: 20px;
-    color: white;
-  }
-  
-  .volo-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .volo-table tr:hover {
-    background-color: #f1f9ff;
-  }
-  
-  .volo-table td {
-    color: #555;
-  }
-  
-  @media (max-width: 600px) {
-    .volo-table th, .volo-table td {
       font-size: 16px;
       padding: 10px;
-    }
-  
-    .title {
-      font-size: 24px;
-    }
   }
+
+  .title {
+      font-size: 24px;
+  }
+}
