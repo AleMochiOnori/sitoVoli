@@ -18,21 +18,21 @@ function App() {
 
   return (
     <>
-    <div className='Wrapper'>
-      <div className='CardContainer'>
-        <h1 className='text-compagnia'>LE NOSTRE COMPAGNIE</h1>
-        {compagnie.map((compagnia, index) => (
-          <div className='Card' key={index}>
-            <div className='CardHeader'>
-              <h3>{compagnia[0]}</h3> {/* Nome compagnia */}
+      <div className='Wrapper'>
+        <div className='CardContainer'>
+          <h1 className='text-compagnia'>LE NOSTRE COMPAGNIE</h1>
+          {compagnie.map((compagnia, index) => (
+            <div className='Card' key={index}>
+              <div className='CardHeader'>
+                <h3>{compagnia.nome}</h3> {/* Nome compagnia */}
+              </div>
+              <div className='CardBody'>
+                <p><strong>Anno di fondazione:</strong> {compagnia.annoFondaz}</p> {/* Anno di fondazione */}
+              </div>
             </div>
-            <div className='CardBody'>
-              <p><strong>Anno di fondazione:</strong> {compagnia[1]}</p> {/* Anno di fondazione */}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }

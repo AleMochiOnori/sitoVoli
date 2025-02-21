@@ -3,50 +3,53 @@ import './VoliInPartenza.css'; // Assicuriamoci di avere un file CSS separato
 
 const VoliInPartenza = () => {
     const [voliInPartenza, setVoliInPartenza] = useState([]);
-    const [, setError] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch('http://127.0.0.1:8080/voliInPartenza')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Errore di rete o del server');
                 }
                 return response.json();
             })
             .then(data => {
-                const voli = data.map((volo) => ({
-                    id: volo[0],
-                    compagnia: volo[1]
-                }));
-                setVoliInPartenza(voli);
+                setVoliInPartenza(data); // Imposta direttamente i dati ricevuti
             })
-            .catch(error => setError(error.message));
+            .catch(error => {
+                console.error('Errore:', error);
+                setError(error.message);
+            });
     }, []);
+
+    if (error) {
+        return <div className="error">Errore: {error}</div>;
+    }
 
     return (
         <div className='wrapper'>
-        <div className="volo-container">
-            <h1 className="title">Voli in partenza</h1>
-            <div className="table-container">
-                <table className="volo-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Compagnia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {voliInPartenza.map((volo) => (
-                            <tr key={volo.id}>
-                                <td>{volo.id}</td>
-                                <td>{volo.compagnia}</td>
+            <div className="volo-container">
+                <h1 className="title">Voli in partenza</h1>
+                <div className="table-container">
+                    <table className="volo-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Compagnia</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {voliInPartenza.map((volo) => (
+                                <tr key={volo.id}>
+                                    <td>{volo.id}</td>
+                                    <td>{volo.compagnia}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
     );
 };
 

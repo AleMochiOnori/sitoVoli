@@ -1,3 +1,4 @@
+import json
 import psycopg2
 from flask import Flask, jsonify
 from flask_cors import CORS
@@ -48,50 +49,59 @@ def get_db_connection():
 
 
 
+def loadJson(path):
+    try:
+        with open(path , 'r' , encoding='utf-8') as file :
+            return json.load(file)
+    except FileNotFoundError :
+        return {"error": f"File not found: {path}"}
+    except json.JSONDecodeError : 
+        return {"error:" f"Errore nella codifica del file JSON : {path}"}
+    except PermissionError :
+        return {"error : " f"Permesso negato nel file :{path}"} 
+    except Exception as e:
+        return {"error : " f"errore generico {e}"}
 
 
 
 @app.route('/compagnia' , methods=["GET"])
 def getCompagnia():
-    cursor = connection.cursor()
-    cursor.execute("SELECT c.nome , c.annoFondaz FROM Compagnia as c")
-    compagnie = cursor.fetchall()
-    return jsonify (compagnie)
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT c.nome, c.annoFondaz FROM Compagnia as c")
+        compagnie = cursor.fetchall()
+        cursor.close()
+        compagnie_list = [{"nome": row[0], "annoFondaz": row[1]} for row in compagnie]
+        return jsonify(compagnie_list)
+    except Exception as e:
+        app.logger.error(f"Database query failed: {e}")
+        try:
+            with open("./json/compagnie.json", "r") as file:
+                comp = json.load(file)
+            return jsonify(comp)
+        except Exception as e:
+            app.logger.error(f"Failed to load JSON file: {e}")
+            return jsonify({"error": "Unable to fetch data"}), 500
 
 
 
-
-@app.route('/voliMagic'  , methods = ["GET"])
-def getVoliMagic():
-    cursor2 = connection.cursor()
-    cursor2.execute("SELECT v.codice , v.comp , v.durataminuti FROM Volo as v WHERE v.comp = 'MagicFly' ")
-    voliMagic = cursor2.fetchall()
-    return voliMagic
 
 @app.route('/voliInPartenza' , methods = ["GET"])
 def getVoliInPartenza():
-    cursor3 = connection.cursor()
-    cursor3.execute("SELECT v.codice , v.comp FROM Volo as v  JOIN ArrPart ap ON ap.codice = v.codice ORDER BY v.comp ASC")
-    voliInPartenza = cursor3.fetchall()
-    return voliInPartenza
-
-@app.route('/tabelle/<table_name>', methods=["GET"])
-def getTabelleMultiple(table_name):
     try:
-        query = f"SELECT * FROM {table_name}"
-        connection = get_db_connection()
-        if not connection:
-            return jsonify({"error": "Connessione al database fallita"}), 500
-        
         cursor = connection.cursor()
-        cursor.execute(query)
-        tabellaScelta = cursor.fetchall()
+        cursor.execute("SELECT v.codice, v.comp FROM Volo as v JOIN ArrPart ap ON ap.codice = v.codice ORDER BY v.comp ASC")
+        voliInPartenza = cursor.fetchall()
         cursor.close()
-        connection.close()
-        
-        return jsonify(tabellaScelta)
-    except Exception as e:
-        return jsonify({"error": f"Errore: {str(e)}"}), 400
+        voli_list = [{"id": row[0], "compagnia": row[1]} for row in voliInPartenza]
+        return jsonify(voli_list)
+    except Exception as e:  
+        app.logger.error(f"Errore durante l'esecuzione della query: {e}")
+        json_data = loadJson("./json/voliInPartenza.json")
+        if "error" in json_data:
+            return jsonify({"error": "Errore nel database e nel caricamento del file JSON", "details": json_data}), 500
+        return jsonify(json_data)
+
 
 
 
