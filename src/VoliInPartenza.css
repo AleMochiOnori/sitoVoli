@@ -58,10 +58,15 @@
   color: #000000;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .volo-table th, .volo-table td {
       font-size: 16px;
       padding: 10px;
+      margin-top: -20px;
+  }
+
+  .wrapper {
+    margin-top: -20px;
   }
 
   .title {
