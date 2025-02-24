@@ -112,11 +112,6 @@ cd sitoVoli
 
             source venv/bin/activate
 
-    Installa le dipendenze Python:
-
-
-    pip install -r requirements.txt
-
     Configura il database PostgreSQL:
 
         Crea un database chiamato Voli su PostgreSQL.
@@ -133,11 +128,19 @@ cd sitoVoli
 
     Avvia il backend Flask:
 
-    python app.py
+    Installa le dipendenze principarli :
+
+       Flask (pip install flask)
+
+       Flask-CORS (pip install flask-cors)
+
+       Psycopg2 (pip install psycopg2) per PostgreSQL.
+
+    python3 server.py
 
         Il backend sarà disponibile all'indirizzo: http://localhost:5000.
 
-3. Configurare il Frontend (Vite + React)
+4. Configurare il Frontend (Vite + React)
 
     Installa le dipendenze di Node.js:
 
@@ -149,23 +152,13 @@ cd sitoVoli
 
         Il frontend sarà disponibile all'indirizzo: http://localhost:5173.
 
-4. Collegare Frontend e Backend
+5. Collegare Frontend e Backend
 
     Assicurati che il backend Flask sia in esecuzione.
 
-    Verifica che le chiamate API nel frontend (es. fetch) puntino all'indirizzo corretto del backend (http://localhost:5000).
+    Verifica che le chiamate API nel frontend (es. fetch) puntino all'indirizzo corretto del backend (http://localhost:8080).
 
 Dipendenze Principali
-
-    Backend (Python):
-
-        Flask (pip install flask)
-
-        Flask-CORS (pip install flask-cors)
-
-        Psycopg2 (pip install psycopg2) per PostgreSQL.
-
-        Altre dipendenze elencate in requirements.txt.
 
     Frontend (React):
 
